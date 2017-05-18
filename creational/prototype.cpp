@@ -20,11 +20,11 @@ public:
 class DogPrototype: public PetPrototype
 {
 public:
-    virtual PetPrototype* clone() const
+    virtual PetPrototype* clone() const override
     {
         return new DogPrototype(*this);
     }
-    virtual string getName() const
+    virtual string getName() const override
     {
         return "Dog";
     }
@@ -33,11 +33,11 @@ public:
 class CatPrototype: public PetPrototype
 {
 public:
-    virtual PetPrototype* clone() const
+    virtual PetPrototype* clone() const override
     {
         return new CatPrototype(*this);
     }
-    virtual string getName() const
+    virtual string getName() const override
     {
         return "Cat";
     }
