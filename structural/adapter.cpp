@@ -36,7 +36,7 @@ public:
 class CatCAdapter: public Pet, private Cat
 {
 public:
-    virtual string getName() const
+    virtual string getName() const override
     {
         return call();
     }
@@ -49,7 +49,7 @@ private:
     Dog* d;
 public:
     DogOAdapter(Dog* d_): d(d_){};
-    virtual string getName() const
+    virtual string getName() const override
     {
         return d->call();
     }
@@ -62,4 +62,6 @@ int main()
     unique_ptr<Dog> d;
     unique_ptr<Pet> pp(new DogOAdapter(d.get()));
     cout<<pp->getName()<<endl;
+
+    return 0;
 }
