@@ -7,6 +7,7 @@ class ASecret
 {
 public:
     virtual void show_secret() const = 0;
+    virtual ~ASecret() = default;
 };
 
 class Secret: public ASecret
@@ -27,8 +28,8 @@ private:
     ASecret* secret;
     string password;
 public:
-    explicit PassSecret(string secret_, string passwd): password(passwd), secret(new Secret(secret_)){}
-    ~PassSecret(){delete secret;}
+    explicit PassSecret(string secret_, string passwd): secret(new Secret(secret_)), password(passwd) {}
+    virtual ~PassSecret(){delete secret;}
     virtual void show_secret() const override
     {
         string temp;

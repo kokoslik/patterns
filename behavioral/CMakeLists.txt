@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.0)
+project(behavioral)
+set (CMAKE_CXX_STANDARD 11)
+# Set a default build type for single-configuration
+# CMake generators if no build type is set.
+IF(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
+   SET(CMAKE_BUILD_TYPE RelWithDebInfo)
+ENDIF(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
+
+# Select flags.
+SET(CMAKE_CXX_FLAGS "-Wall")
+SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
+SET(CMAKE_CXX_FLAGS_RELEASE "-O2")
+SET(CMAKE_CXX_FLAGS_DEBUG  "-O0 -g")
+SET(CMAKE_C_FLAGS "-Wall")
+SET(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g")
+SET(CMAKE_C_FLAGS_RELEASE "-O2")
+SET(CMAKE_C_FLAGS_DEBUG  "-O0 -g")
+
+add_executable(chainofresponsibility chainofresponsibility.cpp)
+add_executable(command command.cpp)
+add_executable(interpreter interpreter.cpp)
+add_executable(iterator iterator.cpp)
+add_executable(mediator mediator.cpp)
+add_executable(memento memento.cpp)
+add_executable(observer observer.cpp)
+add_executable(state state.cpp)
+add_executable(strategy strategy.cpp)
+add_executable(templatemethod templatemethod.cpp)
+add_executable(visitor visitor.cpp)
