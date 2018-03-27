@@ -30,7 +30,7 @@ public:
     PetDecorator(Pet* inner_):inner(inner_){};
     virtual string getName() const
     {
-        inner->getName();
+        return inner->getName();
     }
 };
 
